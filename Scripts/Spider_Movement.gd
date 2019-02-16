@@ -11,7 +11,7 @@ func _ready():
 	# Initialization here
 	randomize()
 	velocity.x = randi()%200-100
-	velocity.y = randi()%200-100
+	velocity.y = randi()%200-100 
 
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -20,4 +20,8 @@ func _process(delta):
 	
 func _physics_process(delta):
 	move_and_slide(velocity)
+	
+	
+func splat():
+	queue_free()
 	
