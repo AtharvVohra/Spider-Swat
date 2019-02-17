@@ -37,7 +37,7 @@ func reset():
 
 func _on_Timer_timeout():
 	# Spawn the next enemy!
-	print("Spawn " level_bank[0] + " with a speed of " + str(level_bank[1]))
+	print("Spawn " + level_bank[0] + " with a speed of " + str(level_bank[1]))
 	# Delete front entry of level_bank
 	level_bank.pop_front()
 	# If entries remaining, set next timer wait time. If none left, stop timer and reset.
