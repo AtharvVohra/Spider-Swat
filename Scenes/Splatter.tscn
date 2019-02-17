@@ -23,14 +23,13 @@ script = ExtResource( 1 )
 
 modulate = Color( 1, 0, 0, 1 )
 self_modulate = Color( 1, 0.03125, 0.03125, 1 )
-scale = Vector2( 1.5, 1.5 )
 z_index = 1
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-scale = Vector2( 4, 4 )
+scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

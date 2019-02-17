@@ -5,9 +5,7 @@ var worldscript = load("res://Scripts/World.gd").new()
 onready var spawntimer = self.get_parent().get_node("Spawntimer")
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	print(spawntimer)
+	# print(spawntimer)
 	pass
 	
 func _physics_process(delta):
