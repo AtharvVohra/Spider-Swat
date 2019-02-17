@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Spider_Movement.gd" type="Script" id=1]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/spiderbag1.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -10,18 +10,21 @@ radius = 10.0
 
 [node name="Spider1" type="KinematicBody2D" index="0"]
 
-position = Vector2( 510.526, 276.842 )
+position = Vector2( 500, 270 )
+scale = Vector2( 1.5, 1.5 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+SPEED = 50
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -1.72501, -2.06117 )
-scale = Vector2( 2.63808, 2.3951 )
+scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 

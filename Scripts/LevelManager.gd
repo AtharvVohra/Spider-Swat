@@ -21,7 +21,7 @@ func _ready():
 	
 	set_process_input(true)
 	build_level_one()
-	pass
+	
 
 func build_level_one():
 	# Empty level bank
