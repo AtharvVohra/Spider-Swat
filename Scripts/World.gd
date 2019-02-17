@@ -1,7 +1,8 @@
 extends Node2D
 
-export var INTERVAL = 0.01
+export var INTERVAL = 0.1
 onready var spider = load("res://Scenes/Spider1.tscn")
+
 
 func _ready():
 

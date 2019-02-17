@@ -1,11 +1,13 @@
 extends Area2D
 
 var mousepos
-var world = load("res://Scripts/World.gd").new()
+var worldscript = load("res://Scripts/World.gd").new()
+onready var spawntimer = self.get_parent().get_node("Spawntimer")
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
+	print(spawntimer)
 	pass
 	
 func _physics_process(delta):
@@ -16,7 +18,7 @@ func _physics_process(delta):
 	#print(mousepos)
 	self.position = mousepos
 	
-	if Input.is_action_pressed("ui_lmbclick"):
+	if Input.is_action_just_pressed("ui_lmbclick"):
 		# kill the spider by getting the collision instance and then calling the queue free
 		# play the swat anim
 		# play sound effect
@@ -24,5 +26,6 @@ func _physics_process(delta):
 		var colBodies = get_overlapping_bodies()
 		for body in colBodies:
 			# kill em
-			world.splat(body)
+			worldscript.splat(body)
+			spawntimer.wait_time -= worldscript.INTERVAL
 
