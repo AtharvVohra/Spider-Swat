@@ -9,11 +9,21 @@
 ]]
 
 script = ExtResource( 1 )
+INTERVAL = 0.01
 
 [node name="Spider1" parent="." index="0" instance=ExtResource( 2 )]
 
 [node name="Splatter" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 294, 335 )
+
+[node name="Spawntimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Spawntimer" to="." method="_on_Spawntimer_timeout"]
 
 

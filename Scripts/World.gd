@@ -1,15 +1,29 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+export var INTERVAL = 0.01
+onready var spider = load("res://Scenes/Spider1.tscn")
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
+
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _fixed_process(delta):
+
+	pass
+
+	# if spawn timer ended:
+		# spawn spider
+		# reset timer
+	# if spider dead:
+		# spawn time -= 0.01
+
+func _on_Spawntimer_timeout():
+	spawn()
+	$Spawntimer.start()
+	
+func spawn():
+	var spawningInstance = spider.instance()
+	add_child(spawningInstance)
+	
+func splat(body):
+	body.queue_free()

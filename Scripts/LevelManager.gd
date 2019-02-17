@@ -12,6 +12,7 @@ var level_bank = []
 
 var timer
 var timer_active = false
+onready var spider = preload("res://Scenes/Spider1.tscn")
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -37,6 +38,12 @@ func reset():
 
 func _on_Timer_timeout():
 	# Spawn the next enemy!
+	
+	# these two lines of code are how the instances are built
+	var spawningInstance = spider.instance()
+	add_child(spawningInstance)
+	
+	
 	print("Spawn " + level_bank[0] + " with a speed of " + str(level_bank[1]))
 	# Delete front entry of level_bank
 	level_bank.pop_front()

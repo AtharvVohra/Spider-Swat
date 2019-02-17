@@ -1,6 +1,7 @@
 extends Area2D
 
 var mousepos
+var world = load("res://Scripts/World.gd").new()
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -22,4 +23,6 @@ func _physics_process(delta):
 		# replace the spider sprite with splat
 		var colBodies = get_overlapping_bodies()
 		for body in colBodies:
-			body.queue_free()
+			# kill em
+			world.splat(body)
+
