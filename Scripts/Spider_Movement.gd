@@ -100,6 +100,12 @@ func _physics_process(delta):
 func _draw():
 	draw_line(Vector2(0,0), trajectory, Color(255,255,255), 1.3) 
 	
+func delet():
+	self.queue_free()
+	
+func stop_movement():
+	SPEED = 0
+	
 	
 	
 	

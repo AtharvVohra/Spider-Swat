@@ -23,14 +23,14 @@ func spawn():
 	globals.spiderCount += 1
 	
 func splat(body):
-	var new_dead = preload("res://Scenes/Spiderdead.tscn").instance()
-	add_child(new_dead)
-	new_dead.global_position.x = body.global_position.x
-	new_dead.global_position.y = body.global_position.y
-	new_dead.show()
-	print(new_dead.global_position.x)
-	print(new_dead.global_position.y)
-	body.queue_free()
+#	var new_dead = preload("res://Scenes/Spiderdead.tscn").instance()
+#	add_child(new_dead)
+#	new_dead.global_position.x = body.global_position.x
+#	new_dead.global_position.y = body.global_position.y
+#	new_dead.show()
+#	print(new_dead.global_position.x)
+#	print(new_dead.global_position.y)
+	body.get_node("AnimationPlayer").play("dead")
 
 func round_end():
 	var t = Timer.new()
