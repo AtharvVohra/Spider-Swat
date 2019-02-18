@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Spiderdead.gd" type="Script" id=1]
+[ext_resource path="res://Assets/spiderdead/spiderdead.png" type="Texture" id=2]
+[ext_resource path="res://Assets/spiderdead/spiderdead2.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[node name="Spiderdead" type="KinematicBody2D"]
+
+position = Vector2( 500, 270 )
+scale = Vector2( 1.5, 1.5 )
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+SPEED = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+disabled = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="dead1" type="Sprite" parent="." index="1"]
+
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
+
+[node name="dead2" type="Sprite" parent="." index="2"]
+
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
+
+

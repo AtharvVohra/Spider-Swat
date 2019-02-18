@@ -2,9 +2,10 @@ extends Node2D
 
 export var INTERVAL = 0.02
 onready var spider = load("res://Scenes/Spider1.tscn")
+onready var spiderdead = preload("res://Scenes/Spiderdead.tscn")
 
 func _ready():
-
+	randomize()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _process(delta):
@@ -21,6 +22,13 @@ func spawn():
 	globals.spiderCount += 1
 	
 func splat(body):
+	var new_dead = preload("res://Scenes/Spiderdead.tscn").instance()
+	add_child(new_dead)
+	new_dead.global_position.x = body.global_position.x
+	new_dead.global_position.y = body.global_position.y
+	new_dead.show()
+	print(new_dead.global_position.x)
+	print(new_dead.global_position.y)
 	body.queue_free()
 
 func round_end():

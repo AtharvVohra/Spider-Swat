@@ -7,11 +7,10 @@ onready var pointstext = self.get_parent().get_node("Points")
 
 func _ready():
 	print(globals.points)
-	pass
 	
 func _physics_process(delta):
 #	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
+#	# Update game logic here.		
 	mousepos = get_viewport().get_mouse_position()
 	
 	#print(mousepos)
@@ -26,7 +25,9 @@ func _physics_process(delta):
 		for body in colBodies:
 			$Splat.play()
 			# kill em
+			
 			worldscript.splat(body)
+
 			globals.points += 5
 			pointstext.text = String(globals.points)
 			print(globals.spiderCount)

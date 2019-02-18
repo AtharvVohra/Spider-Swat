@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Spider1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Splatter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Brewsky.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/background/woodtileset.tres" type="TileSet" id=5]
+[ext_resource path="res://Scenes/Spiderdead.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -30,7 +31,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="World" type="Node2D" groups=[
+[node name="World" type="Node2D" index="0" groups=[
 "Spooders",
 ]]
 
@@ -39,6 +40,7 @@ INTERVAL = 0.02
 
 [node name="Spider1" parent="." index="0" instance=ExtResource( 2 )]
 
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 SPEED = 120
 
 [node name="Splatter" parent="." index="1" instance=ExtResource( 3 )]
@@ -134,7 +136,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="TileMap" type="TileMap" parent="." index="6"]
 
-z_index = -1
+z_index = -10
 mode = 0
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )
@@ -153,6 +155,10 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 16, 0, 0, 1048576, 0, 0, 1048592, 0, 0 )
 _sections_unfolded = [ "Cell", "Z Index" ]
+
+[node name="Spiderdead" parent="." index="7" instance=ExtResource( 6 )]
+
+visible = false
 
 [connection signal="timeout" from="Spawntimer" to="." method="_on_Spawntimer_timeout"]
 
