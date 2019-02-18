@@ -6,6 +6,7 @@ onready var spiderdead = preload("res://Scenes/Spiderdead.tscn")
 
 func _ready():
 	randomize()
+	globals.points = 0
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _process(delta):
