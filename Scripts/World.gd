@@ -1,6 +1,6 @@
 extends Node2D
 
-export var INTERVAL = 0.1
+export var INTERVAL = 0.02
 onready var spider = load("res://Scenes/Spider1.tscn")
 
 func _ready():
@@ -10,12 +10,6 @@ func _ready():
 func _process(delta):
 	if globals.spiderCount >= 500:
 		round_end()
-
-	# if spawn timer ended:
-		# spawn spider
-		# reset timer
-	# if spider dead:
-		# spawn time -= 0.01
 
 func _on_Spawntimer_timeout():
 	spawn()

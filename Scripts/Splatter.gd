@@ -31,8 +31,16 @@ func _physics_process(delta):
 			print(globals.spiderCount)
 			
 			# controlling spawn rate cheaply
-			worldscript.INTERVAL -= 0.05
-			if worldscript.INTERVAL < 0.05:
-				worldscript.INTERVAL = 0.2
-			spawntimer.wait_time -= worldscript.INTERVAL
+			if globals.spiderCount > 6 and globals.spiderCount < 20:
+				spawntimer.wait_time = 0.8
+			if globals.spiderCount >= 20 and globals.spiderCount < 40:
+				spawntimer.wait_time = 0.6
+			if globals.spiderCount >= 40 and globals.spiderCount < 100:
+				spawntimer.wait_time = 0.5
+			if globals.spiderCount >= 100 and globals.spiderCount < 140:
+				spawntimer.wait_time = 0.3
+			if globals.spiderCount >= 140 and globals.spiderCount < 180:
+				spawntimer.wait_time = 0.1
+			if globals.spiderCount >= 180:
+				spawntimer.wait_time -= worldscript.INTERVAL
 

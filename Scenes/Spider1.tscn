@@ -47,7 +47,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 4 ) ]
 }
 
-[node name="Spider1" type="KinematicBody2D"]
+[node name="Spider1" type="KinematicBody2D" index="0"]
 
 position = Vector2( 500, 270 )
 scale = Vector2( 1.5, 1.5 )
