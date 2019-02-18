@@ -31,6 +31,7 @@ func splat(body):
 #	print(new_dead.global_position.x)
 #	print(new_dead.global_position.y)
 	body.get_node("AnimationPlayer").play("dead")
+	body.get_node("CollisionShape2D").disabled = true
 
 func round_end():
 	var t = Timer.new()
