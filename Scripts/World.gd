@@ -24,8 +24,7 @@ func _on_Spawntimer_timeout():
 func spawn():
 	var spawningInstance = spider.instance()
 	add_child(spawningInstance)
-	globals.spiderCount += 1
-	
+
 func splat(body):
 	body.queue_free()
 
