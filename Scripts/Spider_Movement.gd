@@ -74,7 +74,9 @@ func _ready():
 	position.x += -velocity.x * 100
 	position.y += -velocity.y * 100
 			
-			
+	# Set the sprite direction
+	if velocity.x < 0:
+		$Sprite.flip_h = true # turn left
 	
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
