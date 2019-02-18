@@ -7,7 +7,7 @@ extends Node2D
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	pass
+	$Timer.start()
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -17,4 +17,6 @@ func _ready():
 func delet():
 	# delet this
 	queue_free()
-	pass
+
+func _on_Timer_timeout():
+	delet()
