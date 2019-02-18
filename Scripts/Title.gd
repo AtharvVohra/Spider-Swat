@@ -6,6 +6,7 @@ extends Control
 
 func _ready():
 	$Highscore.text = "High Score: " + String(globals.highPoints)
+	globals.spiderCount = 0
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

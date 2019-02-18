@@ -31,10 +31,11 @@ func round_end():
 	t.start()
 	#get_tree().paused = true
 	get_node("GameOver").visible = true
-	print("donezo")
+	# print("donezo")
 	yield(t, "timeout")
 	t.queue_free()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if globals.points >= globals.highPoints:
 		globals.highPoints = globals.points
+	get_node("GameOver").visible = false
 	get_tree().change_scene("res://Scenes/Title.tscn")

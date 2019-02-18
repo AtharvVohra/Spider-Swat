@@ -24,6 +24,7 @@ func _physics_process(delta):
 		# replace the spider sprite with splat
 		var colBodies = get_overlapping_bodies()
 		for body in colBodies:
+			$Splat.play()
 			# kill em
 			worldscript.splat(body)
 			globals.points += 5

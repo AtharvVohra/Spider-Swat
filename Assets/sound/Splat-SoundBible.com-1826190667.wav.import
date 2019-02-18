@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Splat-SoundBible.com-1826190667.wav-0aace66ed2f4b54f51f1f25f7819c64a.sample"
+
+[deps]
+
+source_file="res://Assets/sound/Splat-SoundBible.com-1826190667.wav"
+dest_files=[ "res://.import/Splat-SoundBible.com-1826190667.wav-0aace66ed2f4b54f51f1f25f7819c64a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

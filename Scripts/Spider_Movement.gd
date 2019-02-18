@@ -82,6 +82,6 @@ func _process(delta):
 	pass
 	
 func _physics_process(delta):
-	SPEED = 120
+	SPEED = rand_range(75, 175)
 	move_and_slide(velocity*SPEED)
 	
