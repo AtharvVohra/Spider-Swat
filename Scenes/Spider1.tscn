@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Spider_Movement.gd" type="Script" id=1]
-[ext_resource path="res://Assets/spiderdead/spiderdead.png" type="Texture" id=2]
-[ext_resource path="res://Assets/spiderbag4x1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/spiderbag4x2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/spiderbag4x1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/spiderdead/spiderdead.png" type="Texture" id=3]
+[ext_resource path="res://Assets/spiderdead/spiderdead2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/spiderbag4x2.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -26,7 +27,54 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "delet"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop_movement"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "dead1"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
@@ -72,7 +120,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 2 ) ]
 }
 
 [node name="Spider1" type="KinematicBody2D" index="0"]
@@ -107,6 +155,7 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/dead = SubResource( 2 )
+anims/dead1 = SubResource( 4 )
 anims/skitter = SubResource( 3 )
 blend_times = [  ]
 _sections_unfolded = [ "Pause", "Playback Options" ]
