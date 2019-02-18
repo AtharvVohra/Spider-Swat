@@ -30,7 +30,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=4]
 
-size = 35
+size = 37
 use_mipmaps = true
 use_filter = false
 font_data = ExtResource( 2 )
@@ -58,10 +58,10 @@ anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 381.0
-margin_top = 425.0
-margin_right = 541.0
-margin_bottom = 487.0
+margin_left = 395.0
+margin_top = 330.0
+margin_right = 555.0
+margin_bottom = 392.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -138,9 +138,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 200.0
-margin_top = 265.0
+margin_top = 175.0
 margin_right = 821.0
-margin_bottom = 391.0
+margin_bottom = 301.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -169,10 +169,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 30.0
-margin_top = 542.0
-margin_right = 992.0
-margin_bottom = 580.0
+margin_left = 9.0
+margin_top = 486.0
+margin_right = 1052.0
+margin_bottom = 529.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -184,7 +184,7 @@ text = "Made by Atharv V, Hugh B, Seth K, Omer A w/ Misia B. LMB to Splat!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "Size Flags", "custom_fonts" ]
+_sections_unfolded = [ "Focus", "Rect", "Size Flags", "custom_fonts" ]
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 
