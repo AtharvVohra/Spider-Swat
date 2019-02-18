@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var SPEED = 120
 var SELECTION_RATIO = 0.75
 var velocity = Vector2(0,0) #velocity
+var trajectory = Vector2() #initial trajectory
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -70,6 +71,7 @@ func _ready():
 	
 	velocity.x = dest_pos.x - position.x
 	velocity.y = dest_pos.y - position.y
+	trajectory = velocity
 	velocity = velocity.normalized()
 	
 	#Moving spooder slightly off screen
@@ -79,6 +81,9 @@ func _ready():
 	# Set the sprite direction
 	if velocity.x < 0:
 		$Sprite.flip_h = true # turn left
+		
+	# MAKING CALCULATION FOR STRING DRAWING
+	 
 	
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -88,4 +93,13 @@ func _process(delta):
 func _physics_process(delta):
 
 	move_and_slide(velocity*SPEED)
+	update()
+	
+	
+	
+func _draw():
+	draw_line(Vector2(0,0), trajectory, Color(255,255,255), 1.3) 
+	
+	
+	
 	
