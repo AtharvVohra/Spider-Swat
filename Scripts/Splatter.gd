@@ -4,6 +4,8 @@ var mousepos
 var worldscript = load("res://Scripts/World.gd").new()
 onready var spawntimer = self.get_parent().get_node("Spawntimer")
 onready var pointstext = self.get_parent().get_node("Points")
+var shadow = load("res://Assets/swatter/shadow.png")
+var swatter = load("res://Assets/swatter/swatter.png")
 
 func _ready():
 	print(globals.points)
@@ -17,6 +19,8 @@ func _physics_process(delta):
 	self.position = mousepos
 	
 	if Input.is_action_just_pressed("ui_lmbclick"):
+		$Sprite2.show()
+		$Sprite.hide()
 		# kill the spider by getting the collision instance and then calling the queue free
 		# play the swat anim
 		# play sound effect
@@ -45,4 +49,8 @@ func _physics_process(delta):
 				spawntimer.wait_time = 0.1
 			if globals.spiderCount >= 180:
 				spawntimer.wait_time -= worldscript.INTERVAL
+		$Swat.start()
 
+func _on_Swat_timeout():
+	$Sprite2.hide()
+	$Sprite.show()
