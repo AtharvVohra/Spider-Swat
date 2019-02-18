@@ -11,8 +11,12 @@ config_version=3
 [application]
 
 config/name="Spider-Swat"
-run/main_scene="res://Scenes/World.tscn"
-config/icon="res://Assets/icon-new.png"
+run/main_scene="res://Scenes/Title.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+globals="*res://Scripts/globals.gd"
 
 [input]
 

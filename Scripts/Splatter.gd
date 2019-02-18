@@ -3,9 +3,10 @@ extends Area2D
 var mousepos
 var worldscript = load("res://Scripts/World.gd").new()
 onready var spawntimer = self.get_parent().get_node("Spawntimer")
+onready var pointstext = self.get_parent().get_node("Points")
 
 func _ready():
-	# print(spawntimer)
+	print(globals.points)
 	pass
 	
 func _physics_process(delta):
@@ -25,5 +26,15 @@ func _physics_process(delta):
 		for body in colBodies:
 			# kill em
 			worldscript.splat(body)
-			spawntimer.wait_time -= worldscript.INTERVAL
+			globals.points += 5
+			pointstext.text = String(globals.points)
+			print(globals.spiderCount)
+			
+			# controlling spawn rate cheaply
+			if globals.spiderCount > 40 and globals.spiderCount < 100:
+				pass
+			elif globals.spiderCount > 130 and globals.spiderCount < 220:
+				pass
+			else:
+				spawntimer.wait_time -= worldscript.INTERVAL
 

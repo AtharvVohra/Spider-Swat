@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var SPEED = 50
+export var SPEED = 120
 var SELECTION_RATIO = 0.75
 var velocity = Vector2(0,0) #velocity
 
@@ -82,5 +82,6 @@ func _process(delta):
 	pass
 	
 func _physics_process(delta):
+	SPEED = 120
 	move_and_slide(velocity*SPEED)
 	
