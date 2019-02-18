@@ -34,7 +34,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 ]]
 
 script = ExtResource( 1 )
-INTERVAL = 0.04
+INTERVAL = 0.1
 
 [node name="Spider1" parent="." index="0" instance=ExtResource( 2 )]
 

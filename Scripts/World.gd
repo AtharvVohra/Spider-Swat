@@ -1,6 +1,6 @@
 extends Node2D
 
-export var INTERVAL = 0.04
+export var INTERVAL = 0.1
 onready var spider = load("res://Scenes/Spider1.tscn")
 
 func _ready():
@@ -24,7 +24,8 @@ func _on_Spawntimer_timeout():
 func spawn():
 	var spawningInstance = spider.instance()
 	add_child(spawningInstance)
-
+	globals.spiderCount += 1
+	
 func splat(body):
 	body.queue_free()
 
