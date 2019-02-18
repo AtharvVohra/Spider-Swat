@@ -10,6 +10,8 @@ func _ready():
 	var world_rect = get_viewport_rect()
 	randomize()
 	
+	SPEED = rand_range(75, 175)
+	
 	var spawn_side = randi()%4 + 1  #Deciding which side the spider will spawn on
 	var dest_side  = randi()%2 + 1  #Deciding whether the spider will move towards the horizontal side or the 
 	var dest_pos = Vector2(0,0)
@@ -84,6 +86,6 @@ func _process(delta):
 	pass
 	
 func _physics_process(delta):
-	SPEED = rand_range(75, 175)
+
 	move_and_slide(velocity*SPEED)
 	
