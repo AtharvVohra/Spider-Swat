@@ -31,7 +31,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="World" type="Node2D" index="0" groups=[
+[node name="World" type="Node2D" groups=[
 "Spooders",
 ]]
 
