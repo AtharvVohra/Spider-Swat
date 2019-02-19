@@ -107,5 +107,25 @@ func stop_movement():
 	SPEED = 0
 	
 	
+func call_explosion_anim():
+	$Sprite.flip_h = false
+	randomize()
+	var i = randi()%3
+	if i == 2:
+		get_node("AnimationPlayer").play("pak")
+	elif i == 1:
+		get_node("AnimationPlayer").play("pow")
+	else:
+		get_node("AnimationPlayer").play("bop")
+
+func call_dead_anim():
+	randomize()
+	if randi()%2:
+		get_node("AnimationPlayer").play("dead")
+	else:
+		get_node("AnimationPlayer").play("dead1")
+		
+	
+	
 	
 	

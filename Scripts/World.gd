@@ -30,10 +30,7 @@ func splat(body):
 #	new_dead.show()
 #	print(new_dead.global_position.x)
 #	print(new_dead.global_position.y)
-	if randi()%2:
-		body.get_node("AnimationPlayer").play("dead")
-	else:
-		body.get_node("AnimationPlayer").play("dead1")
+	body.call_explosion_anim()
 		
 	body.get_node("CollisionShape2D").disabled = true
 
